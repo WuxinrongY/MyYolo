@@ -74,7 +74,7 @@ class YoloBody(nn.Module):
         # 进行out2计算
         out2 = self.last_layer2(x2_in)
 
-        return out0, out1, out2
+        return out0, out1, out2              
 if __name__=="__main__":    
     anchors_mask = [[6,7,8], [3,4,5], [0,1,2]]
     model = YoloBody(anchors_mask,20)

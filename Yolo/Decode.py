@@ -39,6 +39,7 @@ class MyDecodeBox():
             scaled_anchors = [
                 (anchor_width / stride_w, anchor_height / stride_h) for anchor_width, anchor_height in self.anchors[self.anchors_mask[i]]
                 ]
+            
             # 新的shape=[batch_size, 3, 13, 13, 25]
             prediction = input.view(batch_size, len(self.anchors_mask[i]), self.bbox_attrs, input_height, input_width).permute(0, 1, 3, 4, 2).contiguous()
             
